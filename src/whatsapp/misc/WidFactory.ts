@@ -22,6 +22,8 @@ import { Wid } from './Wid';
  * @whatsapp 745454 >= 2.2222.8
  */
 export declare namespace WidFactory {
+  function createDeviceWidOrThow(wid: Wid): Wid;
+
   function createDeviceWid(wid: string): Wid;
 
   function createDeviceWidFromUserAndDevice(user: string, device: string): Wid;

@@ -41,8 +41,17 @@ export async function generateMessageID(
   let participant = undefined;
 
   if (to.isGroup()) {
-    const toUserWid = WidFactory.toUserWid || WidFactory.toUserWidOrThrow; // maintain compatibility with older versions of WhatsApp Web
-    participant = toUserWid(from);
+    /**
+     * @description
+     * maintain compatibility with older versions of WhatsApp Web
+     **/
+    if (typeof WidFactory.createDeviceWidOrThow === 'function') {
+      participant = WidFactory.createDeviceWidOrThow(from);
+    } else if (typeof WidFactory.toUserWid === 'function') {
+      participant = WidFactory.toUserWid(from);
+    } else {
+      participant = WidFactory.toUserWidOrThrow(from);
+    }
   }
 
   return new MsgKey({
