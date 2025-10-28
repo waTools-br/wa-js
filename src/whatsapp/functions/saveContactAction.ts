@@ -29,6 +29,8 @@ import { exportModule } from '../exportModule';
 export declare function saveContactAction(
   userToCreate: string,
   userToDelete: string | null,
+  naosei_1: null,
+  naosei_2: null,
   name?: any,
   surname?: any,
   syncToAddressbook?: boolean
@@ -39,5 +41,9 @@ exportModule(
   {
     saveContactAction: 'saveContactAction',
   },
-  (m) => m.saveContactAction
+  (m) => {
+    console.log('AC', m.saveContactAction);
+
+    return m.saveContactAction;
+  }
 );

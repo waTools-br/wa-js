@@ -49,6 +49,8 @@ export async function save(
   await saveContactAction(
     contactId.toString().split('@')[0],
     null,
+    null,
+    null,
     name,
     options?.surname ?? '',
     options?.syncAdressBook ?? true
