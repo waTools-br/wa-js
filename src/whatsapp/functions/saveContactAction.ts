@@ -42,8 +42,6 @@ exportModule(
     saveContactAction: 'saveContactAction',
   },
   (m) => {
-    console.log('AC', m.saveContactAction);
-
     return m.saveContactAction;
   }
 );
