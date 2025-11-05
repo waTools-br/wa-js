@@ -43,7 +43,5 @@ exportModule(
   {
     saveContactAction: 'saveContactAction',
   },
-  (m) => {
-    return m.saveContactAction;
-  }
+  (m) => m.saveContactAction
 );
