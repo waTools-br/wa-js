@@ -132,9 +132,9 @@ function applyPatch() {
         Cmd.trigger('set_active_filter', type);
       }
 
-      filterType = FilterChatListTypes.ALL;
+      /*filterType = FilterChatListTypes.ALL;
       Cmd.trigger('set_active_filter', type);
-      return func(...args);
+      return func(...args);*/
     }
   );
 }

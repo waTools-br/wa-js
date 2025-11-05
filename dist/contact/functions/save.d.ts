@@ -1,5 +1,5 @@
 /*!
- * Copyright 2024 WPPConnect Team
+ * Copyright 2025 WPPConnect Team
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { ContactModel, Wid } from '../../whatsapp';
+import { ContactModel } from '../../whatsapp';
 /**
  * Create new or update a contact in the device
  *
@@ -27,7 +27,7 @@ import { ContactModel, Wid } from '../../whatsapp';
  *
  * @category Contact
  */
-export declare function save(contactId: string | Wid, name: string, options?: {
+export declare function save(contactId: string | any, name: string, options?: {
     surname?: string;
     syncAdressBook?: boolean;
 }): Promise<ContactModel | undefined>;

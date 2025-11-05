@@ -19,8 +19,10 @@
 /**
  * @param user 5521980809090
  * @param userToDelete 5521980809090
+ * @param e_fullName Contact Full Name
+ * @param f_firstName Contact First Name
  * @param name Contact Name
  * @param surname Contact Surname
  * @param syncToAddressbook Sync to Addressbook boolean
  */
-export declare function saveContactAction(userToCreate: string, userToDelete: string | null, naosei_1: null, naosei_2: null, name?: any, surname?: any, syncToAddressbook?: boolean): Promise<undefined>;
+export declare function saveContactAction(userToCreate: string, userToDelete: string | null, e_fullName?: any, f_firstName?: any, name?: any, surname?: any, syncToAddressbook?: boolean): Promise<undefined>;
