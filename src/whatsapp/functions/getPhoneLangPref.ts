@@ -14,23 +14,25 @@
  * limitations under the License.
  */
 
-import { getMessageById } from '../../chat';
-import { WPPError } from '../../util';
-import { MsgKey, StatusV3Store, UserPrefs } from '../../whatsapp';
-import { revokeStatus } from '../../whatsapp/functions';
+import { exportModule } from '../exportModule';
 
-export async function remove(msgId: string | MsgKey): Promise<boolean> {
-  const msg = await getMessageById(msgId);
-  try {
-    await revokeStatus(
-      StatusV3Store.get(UserPrefs.getMaybeMePnUser()) as any,
-      msg
-    );
-    return true;
-  } catch (_error) {
-    throw new WPPError(
-      'error_on_remove_status',
-      `Error on remove status with id ${msgId.toString()}`
-    );
-  }
-}
+/**
+ * Get phone language preference
+ * @whatsapp WAWebUserPrefsLocales
+ */
+export declare function getPhoneLangPref(): string | null;
+
+/**
+ * Set phone language preference
+ * @whatsapp WAWebUserPrefsLocales
+ */
+export declare function setPhoneLangPref(locale: string): void;
+
+exportModule(
+  exports,
+  {
+    getPhoneLangPref: 'getPhoneLangPref',
+    setPhoneLangPref: 'setPhoneLangPref',
+  },
+  (m) => m.getPhoneLangPref && m.setPhoneLangPref
+);
